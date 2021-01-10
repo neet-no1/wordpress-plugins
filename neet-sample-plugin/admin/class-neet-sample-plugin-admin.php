@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ŠÇ—•”•ª“Á—L‚Ìˆ—
+ * ç®¡ç†éƒ¨åˆ†ç‰¹æœ‰ã®å‡¦ç†
  *
  * @link       none
  * @since      1.0.0
@@ -11,40 +11,43 @@
  */
 
 /**
- * ŠÇ—•”•ª“Á—L‚Ìˆ—
+ * ç®¡ç†éƒ¨åˆ†ç‰¹æœ‰ã®å‡¦ç†
  *
- * ƒvƒ‰ƒOƒCƒ“–¼Aƒo[ƒWƒ‡ƒ“AŠÇ—•”•ª‚ÌƒXƒ^ƒCƒ‹ƒV[ƒg‚ÆJavaScript‚Ìİ’è‚ğ’è‹`‚·‚é
+ * ãƒ—ãƒ©ã‚°ã‚¤ãƒ³åã€ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã€ç®¡ç†éƒ¨åˆ†ã®ã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆã¨JavaScriptã®è¨­å®šã‚’å®šç¾©ã™ã‚‹
  *
  * @package    Neet_Sample_Plugin
  * @subpackage Neet_Sample_Plugin/admin
  * @author     ton <no1.neet.professional@gmail.com>
  */
+
+require_once WPNSP_PLUGIN_DIR . '/admin/includes/welcome-panel.php';
+
 class Neet_Sample_Plugin_Admin {
 
 	/**
-	 * ƒvƒ‰ƒOƒCƒ“‚ÌID
+	 * ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ID
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $plugin_name    ƒvƒ‰ƒOƒCƒ“‚ÌID
+	 * @var      string    $plugin_name    ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ID
 	 */
 	private $plugin_name;
 
 	/**
-	 * ƒvƒ‰ƒOƒCƒ“‚Ìƒo[ƒWƒ‡ƒ“
+	 * ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $version    ƒvƒ‰ƒOƒCƒ“‚Ìƒo[ƒWƒ‡ƒ“
+	 * @var      string    $version    ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
 	 */
 	private $version;
 
 	/**
-	 * ƒvƒƒpƒeƒB‚Ìİ’è‚ğs‚¢A‰Šú‰»‚·‚é
+	 * ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã®è¨­å®šã‚’è¡Œã„ã€åˆæœŸåŒ–ã™ã‚‹
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       ƒvƒ‰ƒOƒCƒ“‚ÌID
-	 * @param      string    $version    ƒvƒ‰ƒOƒCƒ“‚Ìƒo[ƒWƒ‡ƒ“
+	 * @param      string    $plugin_name       ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ID
+	 * @param      string    $version    ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -54,17 +57,17 @@ class Neet_Sample_Plugin_Admin {
 	}
 
 	/**
-	 * ŠÇ—•”•ª‚ÌƒXƒ^ƒCƒ‹ƒV[ƒg‚ğ“o˜^‚·‚é
+	 * ç®¡ç†éƒ¨åˆ†ã®ã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆã‚’ç™»éŒ²ã™ã‚‹
 	 *
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
 
 		/**
-		 * –{‹@”\‚Íƒfƒ‚—p‚Å‚·B
+		 * æœ¬æ©Ÿèƒ½ã¯ãƒ‡ãƒ¢ç”¨ã§ã™ã€‚
 		 *
-		 * ƒXƒ^ƒCƒ‹ƒV[ƒg‚ğƒLƒ…[‚É“ü‚ê‚éB
-		 * ‚±‚ÌŠÖ”‚Íƒ[ƒ_[‚É‚æ‚èAƒtƒbƒN‚Æ‚µ‚Ä“o˜^‚³‚ê‚éB
+		 * ã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆã‚’ã‚­ãƒ¥ãƒ¼ã«å…¥ã‚Œã‚‹ã€‚
+		 * ã“ã®é–¢æ•°ã¯ãƒ­ãƒ¼ãƒ€ãƒ¼ã«ã‚ˆã‚Šã€ãƒ•ãƒƒã‚¯ã¨ã—ã¦ç™»éŒ²ã•ã‚Œã‚‹ã€‚
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/neet-sample-plugin-admin.css', array(), $this->version, 'all' );
@@ -72,21 +75,44 @@ class Neet_Sample_Plugin_Admin {
 	}
 
 	/**
-	 * ŠÇ—•”•ª‚ÌJavaScript‚ğ“o˜^‚·‚é
+	 * ç®¡ç†éƒ¨åˆ†ã®JavaScriptã‚’ç™»éŒ²ã™ã‚‹
 	 *
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
 
 		/**
-		 * –{‹@”\‚Íƒfƒ‚—p‚Å‚·B
+		 * æœ¬æ©Ÿèƒ½ã¯ãƒ‡ãƒ¢ç”¨ã§ã™ã€‚
 		 *
-		 * ƒXƒNƒŠƒvƒg‚ğƒLƒ…[‚É“ü‚ê‚éB
-		 * ‚±‚ÌŠÖ”‚Íƒ[ƒ_[‚É‚æ‚èAƒtƒbƒN‚Æ‚µ‚Ä“o˜^‚³‚ê‚éB
+		 * ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ã‚­ãƒ¥ãƒ¼ã«å…¥ã‚Œã‚‹ã€‚
+		 * ã“ã®é–¢æ•°ã¯ãƒ­ãƒ¼ãƒ€ãƒ¼ã«ã‚ˆã‚Šã€ãƒ•ãƒƒã‚¯ã¨ã—ã¦ç™»éŒ²ã•ã‚Œã‚‹ã€‚
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/neet-sample-plugin-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
+    /**
+     * ç®¡ç†éƒ¨åˆ†ã«ã€ŒNeetã®è¨­å®šã€ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’è¿½åŠ ã™ã‚‹
+     *
+     * @since    1.0.0
+     */
+     public function neet_options_page() {
+         add_menu_page(
+             // ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒšãƒ¼ã‚¸ã®ã‚¿ã‚¤ãƒˆãƒ«
+            'ãƒ‹ãƒ¼ãƒˆã®è¨­å®š',
+            // ãƒ¡ãƒ‹ãƒ¥ãƒ¼å
+            'Neetã®è¨­å®š',
+            // ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®æ¨©é™
+            'manage_options',
+            // ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ã‚¹ãƒ©ãƒƒã‚°
+            'neet',
+            // ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒšãƒ¼ã‚¸ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
+            'neet_options_page_html',
+            // ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ã‚¢ã‚¤ã‚³ãƒ³URL
+            plugin_dir_url(__FILE__) . 'images/icon_neet.png',
+            // ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®è¿½åŠ ä½ç½®
+            20
+        );
+    }
 }

@@ -24,6 +24,12 @@ if ( ! defined( 'WPINC' ) ) {
 // プラグインのバージョンを指定
 define( 'NEET_SAMPLE_PLUGIN_VERSION', '1.0.0' );
 
+// 現在のファイルパスを定義
+define( 'WPNSP_PLUGIN', __FILE__ );
+
+// プラグインのディレクトリを定義
+define( 'WPNSP_PLUGIN_DIR', untrailingslashit( dirname( WPNSP_PLUGIN ) ) );
+
 // プラグインの有効化
 function activate_neet_sample_plugin() {
 
