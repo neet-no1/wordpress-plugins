@@ -166,6 +166,9 @@ class Neet_Sample_Plugin {
 
         // $plugin_admin->neet_options_page‚ðƒtƒbƒN‚É“o˜^
         $this->loader->add_action( 'admin_menu', $plugin_admin, 'neet_options_page' );
+
+        // $plugin_admin->neet_sub_options_page‚ðƒtƒbƒN‚É“o˜^
+        $this->loader->add_action( 'admin_menu', $plugin_admin, 'neet_sub_options_page' );
     }
 
     /**

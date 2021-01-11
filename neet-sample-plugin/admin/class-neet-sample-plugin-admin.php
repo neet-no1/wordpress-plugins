@@ -21,6 +21,7 @@
  */
 
 require_once WPNSP_PLUGIN_DIR . '/admin/includes/welcome-panel.php';
+require_once WPNSP_PLUGIN_DIR . '/admin/includes/submenu.php';
 
 class Neet_Sample_Plugin_Admin {
 
@@ -114,5 +115,27 @@ class Neet_Sample_Plugin_Admin {
             // メニューの追加位置
             20
         );
+    }
+
+    /**
+     * 「Neetの設定」メニューに「Neetのサブ設定」を追加する
+     *
+     * @since    1.0.0
+     */
+     public function neet_sub_options_page() {
+         add_submenu_page(
+             // 親メニューのスラッグ
+             'neet',
+             // サブメニューページのタイトル
+             'ニートのサブ設定',
+             // プルダウンに表示されるメニュー名
+             'Neetのサブ設定',
+             // サブメニューの権限
+             'manage_options',
+             // サブメニューのスラッグ
+             'neet_sub1',
+             // サブメニューページのコールバック関数
+             'neet_sub_options_page_html'
+         );
     }
 }
